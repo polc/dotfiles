@@ -1,0 +1,46 @@
+zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle :compinstall filename '~/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt appendhistory notify
+unsetopt beep
+bindkey -v
+
+ZSH=/usr/share/oh-my-zsh
+ZSH_THEME="robbyrussell"
+DISABLE_AUTO_UPDATE="true"
+
+plugins=(git docker)
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export GIT_EDITOR=vim
+export VISUAL=vim
+
+export CHROME_BIN=chromium
+
+ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+if [ ! -S /tmp/ssh_auth_sock ]; then
+  eval `ssh-agent -s`
+  ln -sf "$SSH_AUTH_SOCK" /tmp/ssh_auth_sock
+fi
+
+export SSH_AUTH_SOCK=/tmp/ssh_auth_sock
+source $ZSH/oh-my-zsh.sh
+
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi
+

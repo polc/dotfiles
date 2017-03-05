@@ -1,0 +1,13 @@
+AddKeysToAgent yes
+
+Include config.d/*
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/keys/github
+
+Host bitbucket.org
+    HostName bitbucket.org
+    IdentityFile ~/.ssh/keys/bitbucket
+

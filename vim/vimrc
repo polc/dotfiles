@@ -1,0 +1,74 @@
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'StanAngeloff/php.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox'
+Plugin 'kien/ctrlp.vim'
+
+call vundle#end()
+filetype plugin indent on
+
+set encoding=utf-8
+set t_Co=256
+
+syntax on
+colorscheme gruvbox
+set background=dark
+
+set number
+imap jk <Esc>
+
+" Tabs to spaces
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+
+set nobackup                      " Don't make a backup before overwriting a file.
+set nowritebackup                 " And again.
+set noswapfile                    " Use an SCM instead of swap files
+
+" Highlight current line
+set cursorline
+
+set ignorecase                    " Case-insensitive searching.
+set smartcase                     " But case-sensitive if expression contains a capital letter.
+set incsearch                     " Highlight matches as you type.
+set hlsearch                      " Highlight matches.
+set showmatch                     " Show matching char (like {})
+
+"Change line numbers color
+autocmd InsertEnter * hi LineNr      ctermfg=16 ctermbg=214
+autocmd InsertLeave * hi LineNr      term=underline ctermfg=59 ctermbg=bg
+
+autocmd BufEnter    * hi SpellCap    guisp=Orange
+
+" Remove trailing whitespaces and ^M chars
+autocmd FileType php,js,css,html,xml,yaml,vim autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+
+" Powerline
+set laststatus=2
+
+" tmux
+if &term =~ '256color'
+    " Disable Background Color Erase (BCE) so that color schemes
+    " work properly when Vim is used inside tmux and GNU screen
+    set t_ut=
+endif
+
+" PHP config
+let php_var_selector_is_identifier = 1
+
+function! PhpSyntaxOverride()
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
+    hi! def link phpType     phpKeyword
+endfunction
+
+augroup phpSyntaxOverride
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
+augroup END
+

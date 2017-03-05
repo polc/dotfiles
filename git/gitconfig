@@ -1,0 +1,17 @@
+[user]
+    email = paul@lecorre.me
+    name = Paul Le Corre
+    signingkey = BE80DFAF5CB830C5BFA0BB795629A48A2688BEA1
+
+[core]
+    excludesfile = /home/polc/.gitignore
+
+[merge]
+    tool = meld
+
+[mergetool]
+    keepBackup = false
+
+
+[commit]
+	gpgsign = true
