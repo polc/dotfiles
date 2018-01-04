@@ -1,7 +1,7 @@
 [user]
     email = paul@lecorre.me
     name = Paul Le Corre
-    signingkey = BE80DFAF5CB830C5BFA0BB795629A48A2688BEA1
+    signingkey = 8AE44A746DE5618E
 
 [core]
     excludesfile = /home/polc/.gitignore
