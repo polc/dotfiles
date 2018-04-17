@@ -5,6 +5,7 @@
 
 [core]
     excludesfile = /home/polc/.gitignore
+    autocrlf = input
 
 [merge]
     tool = meld
@@ -12,6 +13,5 @@
 [mergetool]
     keepBackup = false
 
-
 [commit]
-	gpgsign = true
+    gpgsign = true

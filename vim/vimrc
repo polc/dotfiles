@@ -9,6 +9,7 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'morhetz/gruvbox'
 Plugin 'kien/ctrlp.vim'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on

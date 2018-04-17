@@ -21,7 +21,6 @@ plugins=(git docker)
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
-export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 export GIT_EDITOR=vim
 export VISUAL=vim
 
@@ -44,3 +43,5 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
   exec startx
 fi
 
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
