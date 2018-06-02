@@ -2,6 +2,9 @@
 URxvt*scrollBar: false
 URxvt*font: xft:Monospace-12,xft:FontAwesome
 
+! Rofi
+rofi.lines: 5
+
 ! Colors theme
 *.foreground:   #c5c8c6
 *.background:   #1d1f21
