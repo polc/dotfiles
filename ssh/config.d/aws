@@ -1,0 +1,10 @@
+Host cloud.lecorre.me
+    Hostname 35.180.131.176
+    User ubuntu
+    IdentityFile ~/.ssh/keys/aws
+
+Host aws.syncthing
+    Hostname 35.180.116.151
+    User ubuntu
+    IdentityFile ~/.ssh/keys/aws
+

@@ -3,8 +3,8 @@ Host vps1
     User root
     IdentityFile ~/.ssh/keys/ovh
 
-Host cloud.lecorre.me
-    Hostname cloud.lecorre.me
+Host vps2
+    Hostname 37.59.99.17
     User root
     IdentityFile ~/.ssh/keys/ovh
 
