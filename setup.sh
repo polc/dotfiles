@@ -9,6 +9,3 @@ echo "Installation in progress ..."
 ./.setup/tmux.sh
 ./.setup/i3.sh
 ./.setup/polybar.sh
-
-echo "Done."
-
