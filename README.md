@@ -2,4 +2,3 @@
 
 ## Desktop preview
 ![Desktop](./screenshot.png)
-
